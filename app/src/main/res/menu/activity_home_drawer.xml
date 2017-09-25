@@ -4,33 +4,39 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@android:drawable/ic_input_get"
-            android:title="Extrato" />
+            android:icon="@mipmap/ic_account_balance_wallet_black_24dp"
+            android:title="@string/account" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@android:drawable/ic_menu_add"
-            android:title="Crédito" />
+            android:icon="@mipmap/ic_credit_card_black_24dp"
+            android:title="@string/credit" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@android:drawable/ic_menu_share"
-            android:title="Transferir" />
+            android:icon="@mipmap/ic_share_black_24dp"
+            android:title="@string/share" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="Eventos" />
+            android:icon="@mipmap/ic_event_black_24dp"
+            android:title="@string/event" />
     </group>
 
-    <item android:title="Perfil">
+    <item android:title="@string/profile">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Cadastrar" />
+                android:icon="@mipmap/ic_backup_black_24dp"
+                android:title="@string/save" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Listar" />
+                android:icon="@mipmap/ic_view_list_black_24dp"
+                android:title="@string/list" />
         </menu>
+    </item>
+
+    <item
+        android:title="@string/exit"
+        android:id="@+id/bexitMenuExit"
+        android:icon="@mipmap/ic_exit_to_app_black_24dp">
     </item>
 
 </menu>
