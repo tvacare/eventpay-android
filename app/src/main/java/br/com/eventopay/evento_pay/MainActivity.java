@@ -43,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //Navegar para a tela de arquivo
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
-
-
+        finish();
     }
 
     public void novoCadastro(View view){

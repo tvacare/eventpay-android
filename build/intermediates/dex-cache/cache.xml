@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="7f5d363fdee0964dc95faa004901d28796bbf80f">
+        sha1="a4fe30e0105e1b2c55ed754edfaeeda5146f172c">
         <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_cca43b3396d1155860ea0eef66f81e4adf875d66/classes.dex" />
     </item>
     <item
