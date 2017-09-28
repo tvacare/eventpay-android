@@ -41,14 +41,14 @@ public class CadastroUserActivity extends AppCompatActivity {
         try {
             JSONStringer json = new JSONStringer();
             json.object();
-            json.key("usuario").value(usuario.getText().toString());
+            json.key("Nome").value(usuario.getText().toString());
             json.endObject();
 
             Context context;
             context = CadastroUserActivity.this;
-            String url = "http://localhost:59721/api/usuario";
+            String url = "http://api-eventpayment.azurewebsites.net/api/usuario";
 
-            dao.Cadastrar(json, context, url);
+            dao.Cadastrar(json, url, CadastroUserActivity.this );
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -56,11 +56,9 @@ public class CadastroUserActivity extends AppCompatActivity {
 
     public void listar (View view){
         BaseDAO dao = new BaseDAO();
-        String url = "http://localhost:59721/api/usuario";
+        String url = "http://api-eventpayment.azurewebsites.net/api/usuario";
         try {
-            JSONArray jsonArray = dao.Listar(url);
-
-            Toast.makeText(CadastroUserActivity.this,jsonArray.toString(),Toast.LENGTH_LONG).show();
+            dao.Listar(url, CadastroUserActivity.this);
 
         } catch (Exception e) {
             e.printStackTrace();

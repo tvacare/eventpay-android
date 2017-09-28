@@ -1,9 +1,13 @@
 package br.com.eventopay.evento_pay;
 
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -16,33 +20,38 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.eventopay.evento_pay.Model.UsuarioModel;
 
 public class BaseDAO {
-    public void Cadastrar(JSONStringer json, Context c, String url){
+    public void Cadastrar(JSONStringer json, String url, Activity activity){
         CadastroTask task = new CadastroTask();
-        task.setContext(c);
+        task.setActivity(activity);
         task.setUrlIn(url);
         task.execute(json);
     }
 
-    public JSONArray Listar(String url){
+    public void Listar(String url, Activity activity){
         ListaTask task = new ListaTask();
         task.setUrlIn(url);
+        task.setActivity(activity);
         task.execute();
-        return task.getJsonOut();
     }
 
     private class CadastroTask extends AsyncTask<JSONStringer,Void,Integer> {
 
-        private Context context;
+        private ProgressDialog progressDialog;
+        private Activity activity;
         private String urlIn;
 
-        public Context getContext() {
-            return context;
+        public Activity getActivity() {
+            return activity;
         }
 
-        public void setContext(Context context) {
-            this.context = context;
+        public void setActivity(Activity activity) {
+            this.activity = activity;
         }
 
         public String getUrlIn() {
@@ -54,12 +63,18 @@ public class BaseDAO {
         }
 
         @Override
+        protected void onPreExecute() {
+            progressDialog = ProgressDialog.show(activity,"Aguarde", "Enviando para o servidor.");
+        }
+
+        @Override
         protected void onPostExecute(Integer integer) {
+            progressDialog.dismiss();
             //201 - HTTP code CREATED
             if (integer == 201){
-               // Toast.makeText(context,"Sucesso!",Toast.LENGTH_LONG).show();
+                Toast.makeText(activity,"Sucesso!",Toast.LENGTH_LONG).show();
             }else{
-                //Toast.makeText(context,"Erro",Toast.LENGTH_LONG).show();
+                Toast.makeText(activity,"Erro",Toast.LENGTH_LONG).show();
             }
         }
 
@@ -73,7 +88,7 @@ public class BaseDAO {
 
                 //Envia para o servidor
                 OutputStreamWriter stream = new OutputStreamWriter(connection.getOutputStream());
-                stream.write(json.toString());
+                stream.write(json[0].toString());
                 stream.close();
 
                 return connection.getResponseCode();
@@ -89,7 +104,7 @@ public class BaseDAO {
 
         private ProgressDialog progressDialog;
         private String urlIn;
-        private JSONArray jsonOut;
+        private Activity activity;
 
         public String getUrlIn() {
             return urlIn;
@@ -99,31 +114,54 @@ public class BaseDAO {
             this.urlIn = urlIn;
         }
 
-        public JSONArray getJsonOut() {
-            return jsonOut;
+        public Activity getActivity() {
+            return activity;
         }
 
-        public void setJsonOut(JSONArray jsonOut) {
-            this.jsonOut = jsonOut;
+        public void setActivity(Activity activity) {
+            this.activity = activity;
         }
 
         @Override
         protected void onPreExecute() {
-
+            progressDialog = ProgressDialog.show(activity,"Aguarde", "Enviando para o servidor.");
         }
 
         @Override
         protected void onPostExecute(String s) {
+            progressDialog.dismiss();
             if (s != null){
                 //Ler o JSON Array
                 try {
-                    JSONArray jsonOut = new JSONArray(s);
+                    JSONArray jsonArray = new JSONArray(s);
+
+                    List<UsuarioModel> lista = new ArrayList<UsuarioModel>();
+
+                    for (int i=0; i <jsonArray.length(); i++){
+                        JSONObject item = (JSONObject) jsonArray.get(i);
+                        int id = item.getInt("Id");
+                        String nome = item.getString("Nome");
+                        String senha = item.getString("Senha");
+                        String sexo = item.getString("Sexo");
+                        String cpf = item.getString("Cpf");
+                        String celular = item.getString("Celular");
+                        double saldo = 0;//item.getDouble("Saldo");
+                        UsuarioModel item1 = new UsuarioModel(id,nome,senha,sexo,cpf,celular,saldo);
+                        lista.add(item1);
+                    }
+
+                    //Exibir a lista de itens na tela
+                    ListAdapter adapter = new ArrayAdapter(activity,android.R.layout.simple_list_item_1,lista);
+                    //TextView txtView = (TextView) (activity).findViewById(R.id.txtUsuario);
+                    
+                    //a.setAdapter(adapter);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }else{
-
+                Toast.makeText(activity,
+                        "Erro",Toast.LENGTH_SHORT).show();
             }
         }
 
