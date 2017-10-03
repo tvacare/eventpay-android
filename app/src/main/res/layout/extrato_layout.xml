@@ -10,4 +10,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="110dp"
         android:text="Extrato" />
+
+    <ListView
+        android:id="@+id/extratoList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="52dp" />
 </RelativeLayout>

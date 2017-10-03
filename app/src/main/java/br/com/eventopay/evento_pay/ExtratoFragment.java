@@ -17,7 +17,21 @@ public class ExtratoFragment extends android.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        listar();
         myView = inflater.inflate(R.layout.extrato_layout, container, false);
         return myView;
+    }
+
+    public void listar (){
+        BaseDAO dao = new BaseDAO();
+        String url = "http://api-eventpayment.azurewebsites.net/api/usuario";
+        try {
+            dao.Listar(url, ExtratoFragment.this);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

@@ -54,16 +54,5 @@ public class CadastroUserActivity extends AppCompatActivity {
         }
     }
 
-    public void listar (View view){
-        BaseDAO dao = new BaseDAO();
-        String url = "http://api-eventpayment.azurewebsites.net/api/usuario";
-        try {
-            dao.Listar(url, CadastroUserActivity.this);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
 }

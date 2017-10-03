@@ -7,6 +7,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,7 @@ public class BaseDAO {
         task.execute(json);
     }
 
-    public void Listar(String url, Activity activity){
+    public void Listar(String url, ExtratoFragment activity){
         ListaTask task = new ListaTask();
         task.setUrlIn(url);
         task.setActivity(activity);
@@ -104,7 +105,7 @@ public class BaseDAO {
 
         private ProgressDialog progressDialog;
         private String urlIn;
-        private Activity activity;
+        private ExtratoFragment activity;
 
         public String getUrlIn() {
             return urlIn;
@@ -114,17 +115,17 @@ public class BaseDAO {
             this.urlIn = urlIn;
         }
 
-        public Activity getActivity() {
+        public ExtratoFragment getActivity() {
             return activity;
         }
 
-        public void setActivity(Activity activity) {
+        public void setActivity(ExtratoFragment activity) {
             this.activity = activity;
         }
 
         @Override
         protected void onPreExecute() {
-            progressDialog = ProgressDialog.show(activity,"Aguarde", "Enviando para o servidor.");
+            progressDialog = ProgressDialog.show(activity.getActivity(),"Aguarde", "Enviando para o servidor.");
         }
 
         @Override
@@ -151,16 +152,16 @@ public class BaseDAO {
                     }
 
                     //Exibir a lista de itens na tela
-                    ListAdapter adapter = new ArrayAdapter(activity,android.R.layout.simple_list_item_1,lista);
+                    ListAdapter adapter = new ArrayAdapter(activity.getActivity(),android.R.layout.simple_list_item_1,lista);
                     //TextView txtView = (TextView) (activity).findViewById(R.id.txtUsuario);
-                    
-                    //a.setAdapter(adapter);
+                    ListView listView = (ListView) (activity.getActivity()).findViewById(R.id.extratoList);
+                    listView.setAdapter(adapter);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }else{
-                Toast.makeText(activity,
+                Toast.makeText(activity.getActivity(),
                         "Erro",Toast.LENGTH_SHORT).show();
             }
         }
