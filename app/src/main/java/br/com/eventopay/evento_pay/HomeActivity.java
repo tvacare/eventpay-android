@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -84,15 +85,20 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new ExtratoFragment()).commit();
         } else if (id == R.id.nav_gallery) {
-
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new CreditoFragment()).commit();
         } else if (id == R.id.nav_slideshow) {
-
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new TransacaoFragment()).commit();
         } else if (id == R.id.nav_manage) {
-
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new EventoFragment()).commit();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

@@ -14,4 +14,7 @@
     <string name="account">Extrato</string>
     <string name="share">Transferir</string>
     <string name="credit">Crédito</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
