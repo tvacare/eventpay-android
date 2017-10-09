@@ -3,20 +3,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@mipmap/ic_account_balance_wallet_black_24dp"
+            android:id="@+id/nav_extrato"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"
             android:title="@string/account" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@mipmap/ic_credit_card_black_24dp"
+            android:id="@+id/nav_credito"
+            android:icon="@drawable/ic_credit_card_black_24dp"
             android:title="@string/credit" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@mipmap/ic_share_black_24dp"
+            android:id="@+id/nav_transferencia"
+            android:icon="@drawable/ic_share_black_24dp"
             android:title="@string/share" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@mipmap/ic_event_black_24dp"
+            android:id="@+id/nav_eventos"
+            android:icon="@drawable/ic_event_black_24dp"
             android:title="@string/event" />
     </group>
 
@@ -24,11 +24,11 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@mipmap/ic_backup_black_24dp"
+                android:icon="@drawable/ic_backup_black_24dp"
                 android:title="@string/save" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@mipmap/ic_view_list_black_24dp"
+                android:icon="@drawable/ic_view_list_black_24dp"
                 android:title="@string/list" />
         </menu>
     </item>
@@ -36,7 +36,7 @@
     <item
         android:title="@string/exit"
         android:id="@+id/bexitMenuExit"
-        android:icon="@mipmap/ic_exit_to_app_black_24dp">
+        android:icon="@drawable/ic_exit_to_app_black_24dp">
     </item>
 
 </menu>

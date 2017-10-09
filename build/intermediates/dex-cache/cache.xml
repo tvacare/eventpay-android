@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Bruno\Desktop\FIAP_AM\eventopay-android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="33c496bb553e1a1de599824666d43a6d49ad18d7">
+        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_cca43b3396d1155860ea0eef66f81e4adf875d66/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Bruno\Desktop\FIAP_AM\eventopay-android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5b9ea16c1232d3d6138d83753cb96debf211ee4c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Bruno\Desktop\FIAP_AM\eventopay-android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d7b6ba2d3c2c63a14f726b02b2ef966bf0f8fe93">
-        <dex dex="C:\Users\Bruno\Desktop\FIAP_AM\eventopay-android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4bade8c2a1432cbcc07bb7c11d56839e4ba65043\classes.dex" />
+        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c9d7edc215aceac1674949e4e33bc9f64567126c/classes.dex" />
     </item>
 
 </items>

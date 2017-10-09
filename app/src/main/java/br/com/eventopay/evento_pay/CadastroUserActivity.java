@@ -7,12 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.json.JSONStringer;
+
+import br.com.eventopay.evento_pay.services.BaseEndpoint;
 
 public class CadastroUserActivity extends AppCompatActivity {
 
@@ -37,7 +35,7 @@ public class CadastroUserActivity extends AppCompatActivity {
     }
 
     public void cadastrar (View view){
-        BaseDAO dao = new BaseDAO();
+        BaseEndpoint dao = new BaseEndpoint();
         try {
             JSONStringer json = new JSONStringer();
             json.object();
@@ -46,9 +44,9 @@ public class CadastroUserActivity extends AppCompatActivity {
 
             Context context;
             context = CadastroUserActivity.this;
-            String url = "http://api-eventpayment.azurewebsites.net/api/usuario";
+            String endpoint = "api/usuario";
 
-            dao.Cadastrar(json, url, CadastroUserActivity.this );
+            dao.cadastrar(json, endpoint, CadastroUserActivity.this );
         }catch (Exception e){
             e.printStackTrace();
         }

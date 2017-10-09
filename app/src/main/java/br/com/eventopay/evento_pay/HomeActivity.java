@@ -1,10 +1,8 @@
 package br.com.eventopay.evento_pay;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,6 +17,7 @@ import android.widget.ImageView;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +27,8 @@ public class HomeActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -41,7 +40,7 @@ public class HomeActivity extends AppCompatActivity
         profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -60,49 +59,32 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here.aqsq The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_camera) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new ExtratoFragment()).commit();
-        } else if (id == R.id.nav_gallery) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new CreditoFragment()).commit();
-        } else if (id == R.id.nav_slideshow) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new TransacaoFragment()).commit();
-        } else if (id == R.id.nav_manage) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new EventoFragment()).commit();
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (item.getItemId()) {
+            case (R.id.nav_extrato):
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new ExtratoFragment()).commit();
+                break;
+            case (R.id.nav_credito):
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new CreditoFragment()).commit();
+                break;
+            case (R.id.nav_transferencia):
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new TransacaoFragment()).commit();
+                break;
+            case (R.id.nav_eventos):
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new EventoFragment()).commit();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
