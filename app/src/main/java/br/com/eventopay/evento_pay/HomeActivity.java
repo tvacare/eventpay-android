@@ -1,8 +1,8 @@
 package br.com.eventopay.evento_pay;
 
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -45,6 +45,10 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, new ExtratoFragment()).commit();
     }
 
     @Override
@@ -66,7 +70,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
         switch (item.getItemId()) {
             case (R.id.nav_extrato):

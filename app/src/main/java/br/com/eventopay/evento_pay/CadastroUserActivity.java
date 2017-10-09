@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 
 import org.json.JSONStringer;
 
-import br.com.eventopay.evento_pay.services.BaseEndpoint;
+import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
 public class CadastroUserActivity extends AppCompatActivity {
 

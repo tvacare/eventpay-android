@@ -1,10 +1,10 @@
-package br.com.eventopay.evento_pay.services;
+package br.com.eventopay.evento_pay.rest;
 
 import android.app.Activity;
+import android.content.Context;
+import android.view.View;
 
 import org.json.JSONStringer;
-
-import br.com.eventopay.evento_pay.ExtratoFragment;
 
 public class BaseEndpoint {
 
@@ -20,8 +20,8 @@ public class BaseEndpoint {
         cadastro.execute(json);
     }
 
-    public static void listar(String endpoint, ExtratoFragment activity) {
-        ListaTask listar = new ListaTask(activity, URL+endpoint);
+    public static void listar(String endpoint, Context context, View view) {
+        ListaTask listar = new ListaTask(context, URL+endpoint, view);
         listar.execute();
     }
 }

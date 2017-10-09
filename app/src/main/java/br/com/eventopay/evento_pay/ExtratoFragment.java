@@ -4,27 +4,28 @@
 
 package br.com.eventopay.evento_pay;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import br.com.eventopay.evento_pay.services.BaseEndpoint;
+import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
 
 public class ExtratoFragment extends Fragment {
-    View myView;
+
+    private View myView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        this.myView = inflater.inflate(R.layout.extrato_layout, container, false);
         listar();
-        myView = inflater.inflate(R.layout.extrato_layout, container, false);
-        return myView;
+        return this.myView;
     }
 
     public void listar() {
         String endpoint = "api/usuario";
-        BaseEndpoint.listar(endpoint, ExtratoFragment.this);
+        BaseEndpoint.listar(endpoint, getActivity(), myView);
     }
 }
