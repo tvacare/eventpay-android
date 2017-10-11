@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
@@ -100,8 +101,8 @@ public class HomeActivity extends AppCompatActivity
     }
 
     public void comprarCredito (View view){
-        EditText valor = (EditText) findViewById(R.id.txtValor);
-        String endpoint = "/api/credito/?IdUsuario=1&Valor="+ valor.getText().toString();
+        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+        String endpoint = "/api/credito/?IdUsuario=1&Valor="+ seekBar.getProgress();
         BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
     }
 }
