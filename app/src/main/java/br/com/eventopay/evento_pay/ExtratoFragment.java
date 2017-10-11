@@ -36,7 +36,7 @@ public class ExtratoFragment extends Fragment {
 
         //Precisa passar o id do usuario logado!!!!!!!!!!
 
-        String endpoint = "api/transacao/?id_usuario="+ "1";
+        String endpoint = "api/transacao/"+ "5";
         BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");
     }
 
