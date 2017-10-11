@@ -39,6 +39,8 @@ class CadastroTask extends AsyncTask<JSONStringer,Void,Integer> {
 
         if (integer == 201){
             Toast.makeText(activity,"Sucesso!",Toast.LENGTH_LONG).show();
+        }else if(integer == 200) {
+            Toast.makeText(activity, "Sucesso!", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(activity,"Erro",Toast.LENGTH_LONG).show();
         }
@@ -52,10 +54,11 @@ class CadastroTask extends AsyncTask<JSONStringer,Void,Integer> {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type","application/json");
 
-            OutputStreamWriter stream = new OutputStreamWriter(connection.getOutputStream());
-            stream.write(json[0].toString());
-            stream.close();
-
+            if (json[0] != null) {
+                OutputStreamWriter stream = new OutputStreamWriter(connection.getOutputStream());
+                stream.write(json[0].toString());
+                stream.close();
+            }
             return connection.getResponseCode();
 
         } catch (Exception e) {

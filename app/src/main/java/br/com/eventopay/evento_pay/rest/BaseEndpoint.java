@@ -20,8 +20,8 @@ public class BaseEndpoint {
         cadastro.execute(json);
     }
 
-    public static void listar(String endpoint, Context context, View view) {
-        ListaTask listar = new ListaTask(context, URL+endpoint, view);
+    public static void listar(String endpoint, Context context, View view, String layout) {
+        ListaTask listar = new ListaTask(context, URL+endpoint, view, layout);
         listar.execute();
     }
 }

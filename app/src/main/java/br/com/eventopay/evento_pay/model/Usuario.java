@@ -24,9 +24,9 @@ public class Usuario {
         this.saldo = saldo;
     }
 
-    public Usuario(String nome) {
+    public Usuario(int id, String s, String senha, String sexo, String cpf, String nome, double saldo) {
         this.nome = nome;
-        this.senha = senha;
+        this.senha = this.senha;
     }
 
     public Usuario(String nome, String sexo, double saldo) {

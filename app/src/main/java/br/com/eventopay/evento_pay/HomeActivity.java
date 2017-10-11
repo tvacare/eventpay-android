@@ -12,7 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.ImageView;
+
+import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -94,5 +97,11 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void comprarCredito (View view){
+        EditText valor = (EditText) findViewById(R.id.txtValor);
+        String endpoint = "/api/credito/?IdUsuario=1&Valor="+ valor.getText().toString();
+        BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
     }
 }
