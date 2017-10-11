@@ -1,6 +1,7 @@
 package br.com.eventopay.evento_pay;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,13 +16,17 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+//        boolean connectedd = true;
+//        sp.getBoolean("conectado", connectedd);
+//        if (connectedd){
+//            Intent intent = new Intent(this, HomeActivity.class);
+//
+//            startActivity(intent);
+//        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
-
-//        SharedPreferences sp = getPreferences(MODE_PRIVATE);
-
-//      Intent intent = new Intent(this, HomeActivity.class);
-//      startActivity(intent);
 
         edUsuario = (EditText) findViewById(R.id.edUsuario);
         edSenha = (EditText) findViewById(R.id.edSenha);
@@ -34,16 +39,14 @@ public class LoginActivity extends AppCompatActivity {
         //TODO: get user data from API
         BaseEndpoint.logar(LoginActivity.this, endpoint);
 
-
 //        SharedPreferences sp = getPreferences(MODE_PRIVATE);
 //        SharedPreferences.Editor editor = sp.edit();
-
-//        editor.putString("user", usuario);
-//        editor.putString("password", senha);
+//
+//        editor.putString("user", "1");
+//        editor.putString("password", edSenha.getText().toString());
+//        editor.putBoolean("conectado", true);
 //
 //        editor.commit();
-
-
 
     }
 

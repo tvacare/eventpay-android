@@ -4,13 +4,17 @@
 
 package br.com.eventopay.evento_pay;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class ExtratoFragment extends Fragment {
@@ -25,7 +29,16 @@ public class ExtratoFragment extends Fragment {
     }
 
     public void listar() {
-        String endpoint = "api/usuario";
-        BaseEndpoint.listar(endpoint, getActivity(), myView);
+//        SharedPreferences sp = getActivity().getPreferences(MODE_PRIVATE);
+//
+//        String usuario = sp.getString("user", "");
+
+
+        //Precisa passar o id do usuario logado!!!!!!!!!!
+
+        String endpoint = "api/transacao/?id_usuario="+ "1";
+        BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");
     }
+
+
 }

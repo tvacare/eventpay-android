@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
+import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
 /**
  * Created by Bruno on 02/10/2017.
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 
 public class CreditoFragment extends Fragment {
     View myView;
+    EditText valor;
 
     @Nullable
     @Override
@@ -20,4 +24,6 @@ public class CreditoFragment extends Fragment {
         myView = inflater.inflate(R.layout.credito_layout, container, false);
         return myView;
     }
+
+
 }
