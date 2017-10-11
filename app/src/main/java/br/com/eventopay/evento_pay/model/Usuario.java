@@ -14,7 +14,7 @@ public class Usuario {
     private String celular;
     private double saldo;
 
-    public Usuario(int id, String nome, String senha, String sexo, String cpf, String celular, double saldo) {
+    public Usuario(String nome, double saldo) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
@@ -24,33 +24,27 @@ public class Usuario {
         this.saldo = saldo;
     }
 
-    public Usuario(String nome, String senha) {
+    public Usuario(String nome) {
         this.nome = nome;
         this.senha = senha;
     }
 
-    public int getId() {
-        return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Usuario(String nome, String sexo, double saldo) {
+        this.nome = nome;
+        this.sexo = sexo;
+        this.saldo = saldo;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getSexo() {
+        return sexo;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public double getSaldo() {
+        return saldo;
     }
 
     @Override

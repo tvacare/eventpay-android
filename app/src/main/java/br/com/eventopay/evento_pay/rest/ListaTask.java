@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.eventopay.evento_pay.R;
+import br.com.eventopay.evento_pay.layout.CustomAdapter;
 import br.com.eventopay.evento_pay.model.Usuario;
 
 /**
@@ -48,6 +49,7 @@ class ListaTask extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String s) {
         progressDialog.dismiss();
+
         if (s != null){
             //Ler o JSON Array
             try {
@@ -55,24 +57,34 @@ class ListaTask extends AsyncTask<Void, Void, String> {
 
                 List<Usuario> lista = new ArrayList<Usuario>();
 
+                ListView listView = (ListView) view.findViewById(R.id.extratoList);
+
                 for (int i=0; i <jsonArray.length(); i++){
                     JSONObject item = (JSONObject) jsonArray.get(i);
-                    int id = item.getInt("Id");
+
+//                    int id = item.getInt("Id");
                     String nome = item.getString("Nome");
-                    String senha = item.getString("Senha");
+//                    String senha = item.getString("Senha");
                     String sexo = item.getString("Sexo");
-                    String cpf = item.getString("Cpf");
-                    String celular = item.getString("Celular");
-                    double saldo = 0;//item.getDouble("Saldo");
-                    Usuario item1 = new Usuario(id,nome,senha,sexo,cpf,celular,saldo);
-                    lista.add(item1);
+//                    String cpf = item.getString("Cpf");
+//                    String celular = item.getString("Celular");
+//                    double saldo = 0;//item.getDouble("Saldo");
+                    Usuario usuario = new Usuario(nome);
+                    lista.add(usuario);
+
                 }
 
-                //Exibir a lista de itens na tela
-                ListAdapter adapter = new ArrayAdapter(context,android.R.layout.simple_list_item_1,lista);
-                //TextView txtView = (TextView) (activity).findViewById(R.id.txtUsuario);
-                ListView listView = (ListView) view.findViewById(R.id.extratoList);
-                listView.setAdapter(adapter);
+
+
+                CustomAdapter customAdapter = new CustomAdapter(context, R.layout.custom_adapter, lista);
+
+                listView.setAdapter(customAdapter);
+
+
+
+//                ListAdapter adapter = new ArrayAdapter(context,android.R.layout.simple_list_item_1,lista);
+//                TextView txtView = (TextView) (activity).findViewById(R.id.txtUsuario);
+//                listView.setAdapter(adapter);
 
             } catch (JSONException e) {
                 e.printStackTrace();
