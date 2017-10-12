@@ -35,26 +35,6 @@ public class CreditoFragment extends Fragment {
 
     public void iniciaListener(View view){
         valor = (TextView) view.findViewById(R.id.txtValor);
-        valor.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                try{
-                    //Update Seekbar value after entering a number
-                    String editValue = s.toString().substring(3,6);
-                    seekBar.setProgress(Integer.parseInt(s.toString()));
-                } catch(Exception ex) {}
-            }
-        });
         seekBar = (SeekBar) view.findViewById(R.id.seekBar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progress = 0;

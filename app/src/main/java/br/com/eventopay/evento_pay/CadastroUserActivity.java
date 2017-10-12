@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import org.json.JSONStringer;
 
@@ -26,7 +27,7 @@ public class CadastroUserActivity extends AppCompatActivity {
         usuario = (EditText) findViewById(R.id.txtUsuario);
         senha = (EditText) findViewById(R.id.txtSenha);
         senhaConf = (EditText) findViewById(R.id.txtSenhaConf);
-        conta =(EditText) findViewById(R.id.txtConta);
+        //conta =(EditText) findViewById(R.id.txtConta);
         cpf = (EditText) findViewById(R.id.txtCpf);
         fone = (EditText) findViewById(R.id.txtFOne);
         masculino = (RadioButton) findViewById(R.id.rbMasc);
@@ -36,10 +37,22 @@ public class CadastroUserActivity extends AppCompatActivity {
 
     public void cadastrar (View view){
         BaseEndpoint dao = new BaseEndpoint();
+        if (!senha.getText().toString().equals(senhaConf.getText().toString())){
+            Toast.makeText(CadastroUserActivity.this,"Senha diferentes!",Toast.LENGTH_LONG).show();
+            return;
+        }
         try {
             JSONStringer json = new JSONStringer();
             json.object();
             json.key("Nome").value(usuario.getText().toString());
+            json.key("Senha").value(senha.getText().toString());
+            if (masculino.isChecked()){
+                json.key("Sexo").value("Masculino");
+            }else{
+                json.key("Sexo").value("Feminino");
+            }
+            json.key("Cpf").value(cpf.getText().toString());
+            json.key("Celular").value(fone.getText().toString());
             json.endObject();
 
             Context context;
