@@ -24,6 +24,7 @@ public class ExtratoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         this.myView = inflater.inflate(R.layout.extrato_layout, container, false);
+        getActivity().setTitle("Extrato");
         listar();
         return this.myView;
     }
@@ -36,7 +37,7 @@ public class ExtratoFragment extends Fragment {
 
         //Precisa passar o id do usuario logado!!!!!!!!!!
 
-        String endpoint = "api/transacao/"+ "5";
+        String endpoint = "api/transacao/"+ "12";
         BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");
     }
 

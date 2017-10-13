@@ -4,9 +4,12 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -97,10 +100,10 @@ class ListaTask extends AsyncTask<Void, Void, String> {
                         for (int i=0; i <jsonArray.length(); i++){
                             JSONObject item = (JSONObject) jsonArray.get(i);
                             int id = item.getInt("Id");
-                            int id_usuario = item.getInt("id_Usuario");
-                            String nomeEvento = item.getString("nomeEvento");
-                            int id_evento = item.getInt("id_Evento");
-                            double valor = item.getDouble("valor");
+                            int id_usuario = item.getInt("Id_Usuario");
+                            String nomeEvento = item.getString("NomeEvento");
+                            int id_evento = item.getInt("Id_Evento");
+                            double valor = item.getDouble("Valor");
                             Transacao item1 = new Transacao(id_usuario,nomeEvento,id_evento,valor);
                             listaExtrato.add(item1);
                         }
@@ -154,6 +157,50 @@ class ListaTask extends AsyncTask<Void, Void, String> {
                         ListAdapter adapterEvento = new ArrayAdapter(context,android.R.layout.simple_list_item_1,listaEvento);
                         ListView listViewEvento = (ListView) view.findViewById(R.id.eventList);
                         listViewEvento.setAdapter(adapterEvento);
+                        break;
+                    case "spinnerLayout":
+                        List<Evento> listaSpinnerEvento = new ArrayList<Evento>();
+
+                        for (int i=0; i <jsonArray.length(); i++){
+                            JSONObject item = (JSONObject) jsonArray.get(i);
+                            int id = item.getInt("Id");
+                            int id_adm = item.getInt("Id_adm");
+                            double valorTotal = item.getDouble("ValorTotal");
+                            double valorSugerido = item.getDouble("ValorSugerido");
+                            String descricao = item.getString("Descricao");
+                            String nome = item.getString("Nome");
+                            String local = item.getString("Local");
+                            Evento item1 = new Evento(id, id_adm, valorTotal,valorSugerido, descricao, nome, local);
+                            listaSpinnerEvento.add(item1);
+                        }
+
+                        //Exibir a lista de itens no spinner
+                        Spinner mySpinner = (Spinner) view.findViewById(R.id.spinnerEventos);
+                        mySpinner.setAdapter(new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, listaSpinnerEvento));
+                        mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> arg0,
+                                                       View arg1, int position, long arg3) {
+                                // TODO Auto-generated method stub
+                                // Locate the textviews in activity_main.xml
+                                TextView nomeEvetno = (TextView) view.findViewById(R.id.txtNomeEvent);
+                                TextView descEvento = (TextView) view.findViewById(R.id.txtDesc);
+                                TextView valorEvento = (TextView) view.findViewById(R.id.txtxValorSuge);
+                                Spinner mySpinner = (Spinner) view.findViewById(R.id.spinnerEventos);
+
+                                // Set the text followed by the position
+
+                                nomeEvetno.setText("Rank : ");
+                                descEvento.setText("Country : ");
+                                valorEvento.setText("R$ : ");
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> arg0) {
+                                // TODO Auto-generated method stub
+                            }
+                        });
+
                         break;
                     default:
                         System.out.println("Este não é um dia válido!");

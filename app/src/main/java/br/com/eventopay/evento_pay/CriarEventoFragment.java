@@ -20,6 +20,7 @@ public class CriarEventoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.criar_evento_layout, container, false);
+        getActivity().setTitle("Novo Evento");
         return myView;
     }
 }

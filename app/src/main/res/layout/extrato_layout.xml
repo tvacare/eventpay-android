@@ -3,20 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="@string/account"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:background="@drawable/back"/>
-
     <ListView
         android:id="@+id/extratoList"
         android:layout_width="match_parent"
-        android:layout_height="365dp"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView" />

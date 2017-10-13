@@ -25,6 +25,7 @@ public class EventoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.evento_layout, container, false);
         listar();
+        getActivity().setTitle("Eventos");
         return myView;
     }
 

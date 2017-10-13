@@ -29,7 +29,7 @@ public class CreditoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.credito_layout, container, false);
         iniciaListener(myView);
-
+        getActivity().setTitle("Comprar Crédito");
         return myView;
     }
 

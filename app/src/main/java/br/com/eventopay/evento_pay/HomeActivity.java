@@ -106,7 +106,7 @@ public class HomeActivity extends AppCompatActivity
 
     public void comprarCredito (View view){
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
-        String endpoint = "/api/credito/?IdUsuario=1&Valor="+ seekBar.getProgress();
+        String endpoint = "/api/credito/?IdUsuario=12&Valor="+ seekBar.getProgress();
         BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
     }
 
@@ -133,7 +133,7 @@ public class HomeActivity extends AppCompatActivity
             json.key("Descricao").value(descricao.getText().toString());
             json.key("Local").value(local.getText().toString());
             //Alterar Id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-            json.key("Id_adm").value(5);
+            json.key("Id_adm").value(13);
             json.endObject();
 
 
