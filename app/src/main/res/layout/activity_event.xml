@@ -7,28 +7,12 @@
     tools:context="br.com.eventopay.evento_pay.EventActivity">
 
 
-    <ListView
-        android:id="@+id/eventList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="false"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="40dp"
-        android:layout_marginRight="20dp"
-        android:clickable="true"
-        android:src="@drawable/ic_menu_camera"
-        app:elevation="0dp"
-        app:fabSize="normal"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:text="Teste" />
 </RelativeLayout>

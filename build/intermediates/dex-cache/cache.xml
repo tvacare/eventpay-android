@@ -2,139 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\1885cb0c0b056f7c4a66b9b7656850a2dfdc0fcc\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_654e5cd86dc5e776b693be129bc8c90469264345.jar" />
+        sha1="6f59ae2d95ae2ca80557ad2949546e5f3b8a4435">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_51a9d4c7e65d5ad50db27372f6c900532ed5fae4\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\66aad455ec34b5fde90e6003c999a4bd56078f86\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_783f6106579a3b2464a7a3dc39470f06ff02d837.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\55914ac2b42d1dd74664b1790f2e40c67f07586a\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_f0a53ddf340ecc717f6183ee0b435f5145ed6b41.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\cced00bf34f2866dd805ba458e6edbcdf24b4a28\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_b3e7cf3135f53aa477ff12f714f791f6fba303b9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\589fa88be004042a6f3607e7499f3ec2718cbc00\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_cbc0a9914110b08071c1be4ca525b418c10c0e14.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\9f522321ac1b8a61e3bbcf453bb15c46f1912337\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_9e3198bd5b409dbb93f5d886e513ea99e23a1986.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\c398ca97063c0c180c0bb6616a3d9b035f9bd7bf\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_ccf7adecedf6b234549617c91bb6782db77f3460.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_27ef3f2f05b592b3d6c04171d31e0d494797eb66.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\677899e49a8762cd21a49f74a67f38c8edb7300f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_7f6a2588b9f4686c1fcf28404430f8ed9ff03c5f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\1b0711464eea1a4d19a6430cbd5049d6acbd19b2\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_006f4496cd4e3b619866536546d14afd3f55442a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\8f4c47fd62521b9f5de346520ce949fba3678614\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_f2c618234c86a580a396f5a4d9b91c01c17e17a0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\0901c8556e0b2aaf1d2bf9a01c2899f7b2db5a6d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_d812839fc09807d9dccb6f847a7b2904bec1a504.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\f8856a17af57a3bc0b6a10149471e8b54c189f16\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_eaac35b71deaa2e4c86e021716cf80c8f4a4a9d6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_eb029c3fbfb7f091ee0ffaa6496e5831935677a3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\bmartello\.android\build-cache\bc4a8bcee3c9208954b94edd31ab2597902b5d3f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\bmartello\Desktop\AM_\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_916e71458550aef4f0384cf93abe788f57576761.jar" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_107be6b716f0cef40f0740d1ac6b9ff6b9648efc\classes.dex" />
     </item>
 
 </items>

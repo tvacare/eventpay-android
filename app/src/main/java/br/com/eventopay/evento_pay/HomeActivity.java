@@ -1,5 +1,6 @@
 package br.com.eventopay.evento_pay;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +16,9 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.Toast;
+
+import org.json.JSONStringer;
 
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
@@ -104,5 +108,47 @@ public class HomeActivity extends AppCompatActivity
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
         String endpoint = "/api/credito/?IdUsuario=1&Valor="+ seekBar.getProgress();
         BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
+    }
+
+    public void adicionarEvento(View view){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, new CriarEventoFragment()).commit();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+    public void cadastrarEvento (View view){
+        BaseEndpoint dao = new BaseEndpoint();
+        EditText nomeEvento = (EditText) findViewById(R.id.txtNomeEvento);
+        EditText descricao = (EditText) findViewById(R.id.txtDescricao);
+        EditText valorSugerido = (EditText) findViewById(R.id.txtValorUnitario);
+        EditText local = (EditText) findViewById(R.id.txtLocal);
+        try {
+            JSONStringer json = new JSONStringer();
+            json.object();
+            json.key("Nome").value(nomeEvento.getText().toString());
+            json.key("ValorSugerido").value(valorSugerido.getText().toString());
+            json.key("Descricao").value(descricao.getText().toString());
+            json.key("Local").value(local.getText().toString());
+            //Alterar Id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+            json.key("Id_adm").value(5);
+            json.endObject();
+
+
+            String endpoint = "api/evento";
+
+            dao.cadastrar(json, endpoint, HomeActivity.this );
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new EventoFragment()).commit();
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

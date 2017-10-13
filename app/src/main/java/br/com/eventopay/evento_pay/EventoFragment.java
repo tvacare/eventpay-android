@@ -4,12 +4,14 @@
 
 package br.com.eventopay.evento_pay;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
@@ -30,4 +32,6 @@ public class EventoFragment extends Fragment {
         String endpoint = "api/evento";
         BaseEndpoint.listar(endpoint, getActivity(), myView, "eventoLayout");
     }
+
+
 }
