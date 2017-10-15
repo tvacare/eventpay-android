@@ -39,6 +39,9 @@ class CadastroTask extends AsyncTask<JSONStringer,Void,Integer> {
 
         if (integer == 201){
             Toast.makeText(activity,"Sucesso!",Toast.LENGTH_LONG).show();
+            if (endpoint.equalsIgnoreCase("http://api-eventpayment.azurewebsites.net/api/usuario")){
+                activity.finish();
+            }
         }else if(integer == 200) {
             Toast.makeText(activity, "Sucesso!", Toast.LENGTH_LONG).show();
         }else{

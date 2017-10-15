@@ -4,8 +4,10 @@
 
 package br.com.eventopay.evento_pay;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,12 +32,11 @@ public class ExtratoFragment extends Fragment {
     }
 
     public void listar() {
-//        SharedPreferences sp = getActivity().getPreferences(MODE_PRIVATE);
-//
-//        String usuario = sp.getString("user", "");
+        Intent intent = new Intent(getActivity(), HomeActivity.class);
 
 
-        //Precisa passar o id do usuario logado!!!!!!!!!!
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());;
+ //       String usuario = preferences.getString("user", "");
 
         String endpoint = "api/transacao/"+ "12";
         BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");

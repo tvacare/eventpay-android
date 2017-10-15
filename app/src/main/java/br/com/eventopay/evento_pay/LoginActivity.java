@@ -16,20 +16,19 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        SharedPreferences sp = getPreferences(MODE_PRIVATE);
-//        boolean connectedd = true;
-//        sp.getBoolean("conectado", connectedd);
-//        if (connectedd){
-//            Intent intent = new Intent(this, HomeActivity.class);
-//
-//            startActivity(intent);
-//        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
         edUsuario = (EditText) findViewById(R.id.edUsuario);
         edSenha = (EditText) findViewById(R.id.edSenha);
+
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        boolean connectedd = sp.contains("conectado");
+        if (connectedd){
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            LoginActivity.this.finish();
+        }
     }
 
     public void logar(View view) {

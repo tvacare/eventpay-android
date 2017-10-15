@@ -23,13 +23,13 @@
     <item android:title="@string/profile">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_backup_black_24dp"
-                android:title="@string/save" />
+                android:id="@+id/nav_perfil"
+                android:icon="@drawable/user"
+                android:title="Ver Perfil" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_meus_eventos"
                 android:icon="@drawable/ic_view_list_black_24dp"
-                android:title="@string/list" />
+                android:title="Meus Eventos" />
         </menu>
     </item>
 

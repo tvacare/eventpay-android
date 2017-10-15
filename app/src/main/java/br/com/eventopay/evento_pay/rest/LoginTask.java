@@ -6,8 +6,15 @@ package br.com.eventopay.evento_pay.rest;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,6 +22,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import br.com.eventopay.evento_pay.HomeActivity;
+import br.com.eventopay.evento_pay.model.Usuario;
 
 class LoginTask extends AsyncTask<String, Void, String> {
 
@@ -35,42 +43,36 @@ class LoginTask extends AsyncTask<String, Void, String> {
         //progressDialog.dismiss();
 
 
-//        if (s != null) {
-            //Ler o JSON Array
-//            try {
-//                JSON jsonArray = new JSON(s);
-//
-//                List<Usuario> lista = new ArrayList<Usuario>();
+        if (s != null) {
+            //Recuperar os valores do JSON
+            try {
+                JSONObject json = new JSONObject(s);
+                int id = json.getInt("Id");
+                String nome = json.getString("Nome");
+                String senha = json.getString("Senha");
 
-//                for (int i = 0; i < jsonArray.length(); i++) {
-//                    JSONObject item = (JSONObject) jsonArray.get(i);
-//                    int id = item.getInt("Id");
-//                    String nome = item.getString("Nome");
-//                    String senha = item.getString("Senha");
-//                    String sexo = item.getString("Sexo");
-//                    String cpf = item.getString("Cpf");
-//                    String celular = item.getString("Celular");
-//                    double saldo = 0;//item.getDouble("Saldo");
-//                    Usuario item1 = new Usuario(id, nome, senha, sexo, cpf, celular, saldo);
-//                    lista.add(item1);
-//                }
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
+                SharedPreferences.Editor editor = preferences.edit();
 
-                //Exibir a lista de itens na tela
-//                ListAdapter adapter = new ArrayAdapter<>(activity, android.R.layout.simple_list_item_1, lista);
-//                //TextView txtView = (TextView) (activity).findViewById(R.id.txtUsuario);
-//                ListView listView = (ListView) (activity).findViewById(R.id.extratoList);
-//                listView.setAdapter(adapter);
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        } else {
-//            Toast.makeText(activity, "Erro", Toast.LENGTH_SHORT).show();
-//        }
+                editor.putInt("user", id);
+                editor.putString("nome",nome );
+                editor.putString("password",senha );
+                editor.putBoolean("conectado", true);
 
-        Intent intent = new Intent(activity, HomeActivity.class);
-        activity.startActivity(intent);
-        activity.finish();
+                editor.commit();
+
+                Intent intent = new Intent(activity, HomeActivity.class);
+                activity.startActivity(intent);
+                activity.finish();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(activity,
+                    "Usuário Inválido", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
     protected String doInBackground(String... params) {

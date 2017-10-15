@@ -2,6 +2,7 @@ package br.com.eventopay.evento_pay;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
@@ -24,6 +25,7 @@ import org.json.JSONStringer;
 
 import br.com.eventopay.evento_pay.model.Evento;
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
+import br.com.eventopay.evento_pay.sqlite.EventoSQLiteDao;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -100,6 +102,14 @@ public class HomeActivity extends AppCompatActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.content_frame, new EventoFragment()).commit();
                 break;
+            case (R.id.nav_perfil):
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new EventoFragment()).commit();
+                break;
+            case (R.id.nav_meus_eventos):
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new MeusEventosFragment()).commit();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -109,6 +119,9 @@ public class HomeActivity extends AppCompatActivity
 
     public void comprarCredito (View view){
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        String usuario = sp.getString("user", "");
+
         String endpoint = "/api/credito/?IdUsuario=12&Valor="+ seekBar.getProgress();
         BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
     }
@@ -117,6 +130,8 @@ public class HomeActivity extends AppCompatActivity
         TextView valorTransacao = (TextView) findViewById(R.id.txtxValorSuge);
         Spinner mySpinner = (Spinner) findViewById(R.id.spinnerEventos);
         Evento dados2 = (Evento) mySpinner.getAdapter().getItem(mySpinner.getSelectedItemPosition());
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        String usuario = sp.getString("user", "");
         try {
             JSONStringer json = new JSONStringer();
             json.object();
@@ -148,6 +163,8 @@ public class HomeActivity extends AppCompatActivity
         EditText descricao = (EditText) findViewById(R.id.txtDescricao);
         EditText valorSugerido = (EditText) findViewById(R.id.txtValorUnitario);
         EditText local = (EditText) findViewById(R.id.txtLocal);
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        String usuario = sp.getString("user", "");
         try {
             JSONStringer json = new JSONStringer();
             json.object();
@@ -163,7 +180,9 @@ public class HomeActivity extends AppCompatActivity
             String endpoint = "api/evento";
             dao.cadastrar(json, endpoint, HomeActivity.this );
 
-            
+            Evento eventoSqlLite = new Evento(0, 13, 0, 0,descricao.getText().toString(), nomeEvento.getText().toString(), local.getText().toString());
+            EventoSQLiteDao sqlDao = new EventoSQLiteDao(this);
+            sqlDao.insert(eventoSqlLite);
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
