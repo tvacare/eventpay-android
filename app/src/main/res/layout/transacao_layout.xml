@@ -32,6 +32,7 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Nome Evento"
+            android:enabled="false"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="42dp" />
@@ -43,6 +44,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Descrição"
+            android:enabled="false"
             android:inputType="textMultiLine"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="102dp" />
@@ -54,7 +56,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Valor"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
         <Button
             android:id="@+id/button2"
@@ -63,7 +65,7 @@
             android:layout_height="31dp"
             android:layout_marginTop="30dp"
             android:background="#9a0606"
-            android:onClick="cadastrar"
+            android:onClick="transferir"
             android:text="Transferir" />
     </LinearLayout>
 

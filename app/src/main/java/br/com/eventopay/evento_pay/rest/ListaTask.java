@@ -187,12 +187,14 @@ class ListaTask extends AsyncTask<Void, Void, String> {
                                 TextView descEvento = (TextView) view.findViewById(R.id.txtDesc);
                                 TextView valorEvento = (TextView) view.findViewById(R.id.txtxValorSuge);
                                 Spinner mySpinner = (Spinner) view.findViewById(R.id.spinnerEventos);
+                                Evento dados2 = (Evento) mySpinner.getAdapter().getItem(position);
+
 
                                 // Set the text followed by the position
-
-                                nomeEvetno.setText("Rank : ");
-                                descEvento.setText("Country : ");
-                                valorEvento.setText("R$ : ");
+                                double valDados = dados2.getValorSugerido();
+                                nomeEvetno.setText(dados2.getNome().toString());
+                                descEvento.setText(dados2.getDescricao().toString());
+                                valorEvento.setText(String.valueOf(valDados));
                             }
 
                             @Override

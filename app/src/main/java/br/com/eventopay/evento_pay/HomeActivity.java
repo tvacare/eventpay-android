@@ -16,10 +16,13 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONStringer;
 
+import br.com.eventopay.evento_pay.model.Evento;
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
 public class HomeActivity extends AppCompatActivity
@@ -110,6 +113,26 @@ public class HomeActivity extends AppCompatActivity
         BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
     }
 
+    public void transferir (View view){
+        TextView valorTransacao = (TextView) findViewById(R.id.txtxValorSuge);
+        Spinner mySpinner = (Spinner) findViewById(R.id.spinnerEventos);
+        Evento dados2 = (Evento) mySpinner.getAdapter().getItem(mySpinner.getSelectedItemPosition());
+        try {
+            JSONStringer json = new JSONStringer();
+            json.object();
+            //Alterar Id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+            json.key("Id_Usuario").value(12);
+            json.key("Valor").value(valorTransacao.getText().toString());
+            json.key("Id_Evento").value(dados2.getId());
+            json.endObject();
+
+            String endpoint = "/api/transacao";
+            BaseEndpoint.cadastrar(json, endpoint, HomeActivity.this);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void adicionarEvento(View view){
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -138,8 +161,9 @@ public class HomeActivity extends AppCompatActivity
 
 
             String endpoint = "api/evento";
-
             dao.cadastrar(json, endpoint, HomeActivity.this );
+
+            
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
