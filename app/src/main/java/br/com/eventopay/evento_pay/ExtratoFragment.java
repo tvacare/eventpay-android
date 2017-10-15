@@ -35,7 +35,7 @@ public class ExtratoFragment extends Fragment {
         Intent intent = new Intent(getActivity(), HomeActivity.class);
 
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
  //       String usuario = preferences.getString("user", "");
 
         String endpoint = "api/transacao/"+ "12";

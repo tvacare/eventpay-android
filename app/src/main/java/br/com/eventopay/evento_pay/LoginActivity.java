@@ -2,6 +2,7 @@ package br.com.eventopay.evento_pay;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         edUsuario = (EditText) findViewById(R.id.edUsuario);
         edSenha = (EditText) findViewById(R.id.edSenha);
 
-        SharedPreferences sp = getPreferences(MODE_PRIVATE);
-        boolean connectedd = sp.contains("conectado");
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+        boolean connectedd = preferences.contains("conectado");
         if (connectedd){
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
