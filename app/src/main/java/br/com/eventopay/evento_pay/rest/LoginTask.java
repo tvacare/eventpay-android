@@ -46,7 +46,7 @@ class LoginTask extends AsyncTask<String, Void, String> {
         //progressDialog.dismiss();
 
 
-        if (s != null) {
+        if (s != null && !s.equalsIgnoreCase("null")) {
             //Recuperar os valores do JSON
             try {
                 JSONObject json = new JSONObject(s);
