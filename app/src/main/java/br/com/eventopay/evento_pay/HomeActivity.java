@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -77,6 +78,10 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
+        TextView txtExibeSaldo = (TextView) findViewById(R.id.txtExibeSaldo);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+        float saldo = preferences.getFloat("saldo", 0);
+        txtExibeSaldo.setText("R$ "+saldo);
         return true;
     }
 
@@ -117,26 +122,37 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
+    public void atualizaUsuario(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+        String user = preferences.getString("nome", null);
+        String password = preferences.getString("password", null);
+        String endpoint = "api/Login?Nome="+user+"&Senha="+password;
+
+        //TODO: get user data from API
+        BaseEndpoint.logar(HomeActivity.this, endpoint);
+    }
+
     public void comprarCredito (View view){
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
-        SharedPreferences sp = getPreferences(MODE_PRIVATE);
-        String usuario = sp.getString("user", "");
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+        int usuario = preferences.getInt("user", 0);
 
-        String endpoint = "/api/credito/?IdUsuario=12&Valor="+ seekBar.getProgress();
+        String endpoint = "/api/credito/?IdUsuario="+usuario+"&Valor="+ seekBar.getProgress();
         BaseEndpoint.cadastrar(null, endpoint, HomeActivity.this);
+
+        atualizaUsuario();
     }
 
     public void transferir (View view){
         TextView valorTransacao = (TextView) findViewById(R.id.txtxValorSuge);
         Spinner mySpinner = (Spinner) findViewById(R.id.spinnerEventos);
         Evento dados2 = (Evento) mySpinner.getAdapter().getItem(mySpinner.getSelectedItemPosition());
-        SharedPreferences sp = getPreferences(MODE_PRIVATE);
-        String usuario = sp.getString("user", "");
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+        int usuario = preferences.getInt("user", 0);
         try {
             JSONStringer json = new JSONStringer();
             json.object();
-            //Alterar Id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-            json.key("Id_Usuario").value(12);
+            json.key("Id_Usuario").value(usuario);
             json.key("Valor").value(valorTransacao.getText().toString());
             json.key("Id_Evento").value(dados2.getId());
             json.endObject();
@@ -146,6 +162,8 @@ public class HomeActivity extends AppCompatActivity
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        atualizaUsuario();
     }
 
     public void adicionarEvento(View view){
@@ -163,8 +181,8 @@ public class HomeActivity extends AppCompatActivity
         EditText descricao = (EditText) findViewById(R.id.txtDescricao);
         EditText valorSugerido = (EditText) findViewById(R.id.txtValorUnitario);
         EditText local = (EditText) findViewById(R.id.txtLocal);
-        SharedPreferences sp = getPreferences(MODE_PRIVATE);
-        String usuario = sp.getString("user", "");
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+        int usuario = preferences.getInt("user", 0);
         try {
             JSONStringer json = new JSONStringer();
             json.object();
@@ -172,15 +190,14 @@ public class HomeActivity extends AppCompatActivity
             json.key("ValorSugerido").value(valorSugerido.getText().toString());
             json.key("Descricao").value(descricao.getText().toString());
             json.key("Local").value(local.getText().toString());
-            //Alterar Id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-            json.key("Id_adm").value(13);
+            json.key("Id_adm").value(usuario);
             json.endObject();
 
 
             String endpoint = "api/evento";
             dao.cadastrar(json, endpoint, HomeActivity.this );
 
-            Evento eventoSqlLite = new Evento(0, 13, 0, 0,descricao.getText().toString(), nomeEvento.getText().toString(), local.getText().toString());
+            Evento eventoSqlLite = new Evento(0, usuario, 0, 0,descricao.getText().toString(), nomeEvento.getText().toString(), local.getText().toString());
             EventoSQLiteDao sqlDao = new EventoSQLiteDao(this);
             sqlDao.insert(eventoSqlLite);
 

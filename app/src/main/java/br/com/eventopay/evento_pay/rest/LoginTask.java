@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -22,6 +24,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import br.com.eventopay.evento_pay.HomeActivity;
+import br.com.eventopay.evento_pay.R;
 import br.com.eventopay.evento_pay.model.Usuario;
 
 class LoginTask extends AsyncTask<String, Void, String> {
@@ -35,7 +38,7 @@ class LoginTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPreExecute() {
-        progressDialog = ProgressDialog.show(activity, null, null);
+      //  progressDialog = ProgressDialog.show(activity, null, null);
     }
 
     @Override
@@ -50,6 +53,9 @@ class LoginTask extends AsyncTask<String, Void, String> {
                 int id = json.getInt("Id");
                 String nome = json.getString("Nome");
                 String senha = json.getString("Senha");
+                double saldo = json.getDouble("Saldo");
+
+                float d= ((float) saldo);
 
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
                 SharedPreferences.Editor editor = preferences.edit();
@@ -58,8 +64,10 @@ class LoginTask extends AsyncTask<String, Void, String> {
                 editor.putString("nome",nome );
                 editor.putString("password",senha );
                 editor.putBoolean("conectado", true);
+                editor.putFloat("saldo", d);
 
                 editor.commit();
+
 
                 Intent intent = new Intent(activity, HomeActivity.class);
                 activity.startActivity(intent);

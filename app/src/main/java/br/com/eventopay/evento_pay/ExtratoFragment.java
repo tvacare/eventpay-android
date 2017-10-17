@@ -36,9 +36,9 @@ public class ExtratoFragment extends Fragment {
 
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
- //       String usuario = preferences.getString("user", "");
+        int usuario = preferences.getInt("user", 0);
 
-        String endpoint = "api/transacao/"+ "12";
+        String endpoint = "api/transacao/"+ usuario;
         BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");
     }
 

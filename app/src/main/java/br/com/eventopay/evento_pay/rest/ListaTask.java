@@ -50,7 +50,7 @@ class ListaTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPreExecute() {
-        progressDialog = ProgressDialog.show(context,"Aguarde", "Enviando para o servidor.");
+        progressDialog = ProgressDialog.show(context,"Aguarde", "Carregando dados.");
     }
 
     @Override
