@@ -4,8 +4,13 @@
 
 package br.com.eventopay.evento_pay.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "usuario")
 public class Usuario {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String nome;
     private String senha;

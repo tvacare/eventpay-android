@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="nosensor"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home" />
-        <activity android:name=".CadastroUserActivity" />
-        <activity android:name=".EventActivity"></activity>
+            android:label="@string/title_activity_home"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name=".CadastroUserActivity"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name=".EventActivity"
+            android:screenOrientation="nosensor" />
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
 package br.com.eventopay.evento_pay;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -106,9 +108,11 @@ public class HomeActivity extends AppCompatActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.content_frame, new EventoFragment()).commit();
                 break;
-            case (R.id.nav_meus_eventos):
-                fragmentManager.beginTransaction()
-                        .replace(R.id.content_frame, new MeusEventosFragment()).commit();
+            case (R.id.bexitMenuExit):
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.confirmation)
+                        .setPositiveButton(R.string.positive, dialogClickListener)
+                        .setNegativeButton(R.string.negative, dialogClickListener).show();
                 break;
         }
 
@@ -116,6 +120,20 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    finish();
+                    break;
+
+                case DialogInterface.BUTTON_NEGATIVE:
+                    break;
+            }
+        }
+    };
 
     public void comprarCredito (View view){
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);

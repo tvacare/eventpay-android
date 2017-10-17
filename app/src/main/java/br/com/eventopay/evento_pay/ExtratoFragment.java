@@ -32,8 +32,8 @@ public class ExtratoFragment extends Fragment {
     }
 
     public void listar() {
-        Intent intent = new Intent(getActivity(), HomeActivity.class);
 
+        Intent intent = new Intent(getActivity(), HomeActivity.class);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
  //       String usuario = preferences.getString("user", "");
@@ -41,6 +41,7 @@ public class ExtratoFragment extends Fragment {
         String endpoint = "api/transacao/"+ "12";
         BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");
     }
+
 
 
 }
