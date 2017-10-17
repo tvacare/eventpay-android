@@ -2,157 +2,139 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/74b6da020a03156699bf7254e8c98ae0c25b1c90/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="1a3b439bf63a72fd76ecf34e0410a097f3a20c9e">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fea9d57b66055466a08ccf0a52799ef1d952f5ae/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.gradle/caches/modules-2/files-2.1/android.arch.persistence.room/common/1.0.0-beta2/ca1ff4dcde3382ff37a9a99d91b0bc49df7fd6f/common-1.0.0-beta2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="0ca1ff4dcde3382ff37a9a99d91b0bc49df7fd6f">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0-beta2_9e23af7990800a84305a8b12b285198ca157dae7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/92647de5666398a98b3dcabe9ac5204f72212316/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_930b27ea779829d5a268dddc6582ccd29470b86a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/8266264a13f7884ef6cce72f61c6cae9b6bbd692/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="8531f2d46b35de75e6130f25830e0c2c0d6bb98c">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ada403aa9894d123d1983e67021a5c57a077fc25/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/d77fb5f556e63994f544e1e7ab5d83ce3eb5def5/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="182650654066cabdea124de5afba78681e97b83d">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0dea67a8448380b057a7813f07da3a5f11631f43/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_ed7d5d615bf20b7987053548dd23f43885df38b8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.1.0_683007314ac903343f8b19a356670addb3e43b4d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/8b5521ea654cd01b7adc805a047142f5e523d479/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4734aecd87f6cf31e88cacd5238b6f376350f15e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/7b67d9a1dda73b8604a416129a96e387d5af270d/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="f530c82ce3415cff874dfd6801a7bde8bb12522b">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_315858da0d6528457ac0a02307e022fb65ee96bf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.2/3cf2ddb6fd27236f2c81ea160f416867ae68e638/common-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="3cf2ddb6fd27236f2c81ea160f416867ae68e638">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.2_ae74354549c6d332d03e27973f539f8ca81aa91f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/77211ca11ea4c29ae1fd3af971ed84facdba6fc1/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\0f2a2cd544a8b29175b861fbb8fc3e4500bfeadf\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c595afc02c8ea5b50fa47fc14a5f11c462e46d19/classes.dex" />
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_30bb41552102b51b984f07c92c6a47d26961be96.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/750edbf1dbd56ee570c1d5fcb5c545a360580201/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\824b259d6cbc14a22d1e4cb1df512075a5695955\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="508f50705b4fde51a16259f29c854201a3044516">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c92dfba406547e7abaa6122837e0ea981b301fe8/classes.dex" />
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_763d889cd9a01dd6585fc98f238037df3fcc0a50.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/a27c99ce3c78780b359ab33ea0b4dc7b029d27df/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a229ede9aaa01c33e0901f113e8a800274bbfbf1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c9d7edc215aceac1674949e4e33bc9f64567126c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="a7a8b63d1345e9af07e40bf8da584610cfcd2b00">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_cca43b3396d1155860ea0eef66f81e4adf875d66/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/084cd3917f2ce3f399b5e489e12404c001c8e1d5/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\16a5f005c0363ac10175791d96c1771d344fdbd8\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="646efe44fe1bb6e7882efe1f72976ad5cc228ab6">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7056e821691a31024687f519f4b42daef197952/classes.dex" />
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_218fe1a686c5c6679e0c433b9a0a2d4510d07f30.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/kiddo/.android/build-cache/b344286d5ded20dc92a5847ce740dc747c483dff/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\c579df38d3850abeab8052797ab2c053572c1306\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8531f2d46b35de75e6130f25830e0c2c0d6bb98c">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_be3d58ce3e7017e29a7470263570add0edae8473.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\common-1.0.0_7208f5284bf5b9bb9b20ded7741946c6a0dc80e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\c03cd15e6d8befb6aa6cb27ade9fa238fc625c26\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="182650654066cabdea124de5afba78681e97b83d">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_1826ddb4b80864341a18b2c40791009242efb7e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\cc9fceef76d544ad529e1391e3f130bec21b1f50\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="1a3b439bf63a72fd76ecf34e0410a097f3a20c9e">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_d4f8142c3e5102f1c7b73c14b9ccaf61721b3ab7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\939d4d503eea9786be84baa399475d6be63b770d\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="fa7ba0dc1e06d58630a7ccab1a81aa0f004cb688">
-        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b09611f62a3f3e8621b6db012f9e14e4841e2ef9/classes.dex" />
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_7c3d9634f239062ac0f537ea0eac63c15afdafda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\0bb062c81097362d2f12a3966b42995ce8ff748a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_9959a9f26a6991c3f5dfcb38c6cece7f82f691ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\94cb70f1d1848ffda2ee30ee31aec51cd0b3e32e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_0916faaabd0a15a491c47dbcfa35e44e500c5102.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.2\3cf2ddb6fd27236f2c81ea160f416867ae68e638\common-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3cf2ddb6fd27236f2c81ea160f416867ae68e638">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\common-1.0.2_e1b9449019e4701fd0fd71a3f83a5637e7e37c4b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\6618f5b3f69fac414cf16b47da5e70edae683572\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f530c82ce3415cff874dfd6801a7bde8bb12522b">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_588fb5ed12b4a9826aa0eb3e791e48720f6e5b13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.android\build-cache\2b8ee6578866cb0e9a833ebe6d39d7578cbda07f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\classes_f26c90372733043db20251e88c815761dcdaa09f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_25dca1cf0e5c496380419bf967248ab6821679c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bruno\.gradle\caches\modules-2\files-2.1\android.arch.persistence.room\common\1.0.0-beta2\ca1ff4dcde3382ff37a9a99d91b0bc49df7fd6f\common-1.0.0-beta2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0ca1ff4dcde3382ff37a9a99d91b0bc49df7fd6f">
+        <dex dex="C:\Users\Bruno\Desktop\Versao2\eventopay-android\app\build\intermediates\pre-dexed\debug\common-1.0.0-beta2_beaef61edccab773a67b725fc8647d87c2cc00d3.jar" />
     </item>
 
 </items>
