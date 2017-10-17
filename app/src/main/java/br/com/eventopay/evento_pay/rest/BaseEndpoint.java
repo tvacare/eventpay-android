@@ -6,6 +6,8 @@ import android.view.View;
 
 import org.json.JSONStringer;
 
+import br.com.eventopay.evento_pay.ExtratoAdapter;
+
 public class BaseEndpoint {
 
     private static final String URL = "http://api-eventpayment.azurewebsites.net/";
@@ -20,8 +22,8 @@ public class BaseEndpoint {
         cadastro.execute(json);
     }
 
-    public static void listar(String endpoint, Context context, View view, String layout) {
-        ListaTask listar = new ListaTask(context, URL+endpoint, view, layout);
+    public static void listar(String endpoint, Context context, View view, String layout, ExtratoAdapter adapter) {
+        ListaTask listar = new ListaTask(context, URL+endpoint, view, layout, adapter);
         listar.execute();
     }
 }

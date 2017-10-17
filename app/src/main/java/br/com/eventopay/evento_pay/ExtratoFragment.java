@@ -10,10 +10,16 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.eventopay.evento_pay.model.Transacao;
 import br.com.eventopay.evento_pay.rest.BaseEndpoint;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -22,6 +28,8 @@ import static android.content.Context.MODE_PRIVATE;
 public class ExtratoFragment extends Fragment {
 
     private View myView;
+    private ExtratoAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,8 +46,17 @@ public class ExtratoFragment extends Fragment {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         int usuario = preferences.getInt("user", 0);
 
+        recyclerView = (RecyclerView) myView.findViewById(R.id.extratoList);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        List<Transacao> list = new ArrayList<>();
+        adapter = new ExtratoAdapter(list, getContext());
+        recyclerView.setAdapter(adapter);
+
         String endpoint = "api/transacao/"+ usuario;
-        BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout");
+        BaseEndpoint.listar(endpoint, getActivity(), myView, "extratoLayout", adapter);
     }
 
 

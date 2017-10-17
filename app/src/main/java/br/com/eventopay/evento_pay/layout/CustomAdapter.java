@@ -29,34 +29,34 @@ public class CustomAdapter extends ArrayAdapter<Usuario> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View v = convertView;
+//        View v = convertView;
+//
+//        if (v == null) {
+//            LayoutInflater vi;
+//            vi = LayoutInflater.from(getContext());
+//            v = vi.inflate(R.layout.custom_adapter, null);
+//        }
+//
+//        Usuario usuario = getItem(position);
 
-        if (v == null) {
-            LayoutInflater vi;
-            vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.custom_adapter, null);
-        }
-
-        Usuario usuario = getItem(position);
-
-        if (usuario != null) {
-            TextView tt1 = (TextView) v.findViewById(R.id.nome);
-            TextView tt2 = (TextView) v.findViewById(R.id.sexo);
-//            TextView tt3 = (TextView) v.findViewById(R.id.saldo);
-
-            if (tt1 != null) {
-                tt1.setText(usuario.getNome());
-            }
-
-            if (tt2 != null) {
-                tt2.setText(usuario.getSexo());
-            }
+//        if (usuario != null) {
+//            TextView tt1 = (TextView) v.findViewById(R.id.nome);
+//            TextView tt2 = (TextView) v.findViewById(R.id.sexo);
+////            TextView tt3 = (TextView) v.findViewById(R.id.saldo);
+//
+//            if (tt1 != null) {
+//                tt1.setText(usuario.getNome());
+//            }
+//
+//            if (tt2 != null) {
+//                tt2.setText(usuario.getSexo());
+//            }
 
 //            if (tt3 != null) {
 //                tt3.setText((int) usuario.getSaldo());
 //            }
-        }
+//        }
 
-        return v;
+        return null;
     }
 }

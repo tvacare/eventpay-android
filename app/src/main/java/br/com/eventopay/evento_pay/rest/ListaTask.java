@@ -23,6 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.eventopay.evento_pay.ExtratoAdapter;
 import br.com.eventopay.evento_pay.R;
 import br.com.eventopay.evento_pay.layout.CustomAdapter;
 import br.com.eventopay.evento_pay.model.Evento;
@@ -40,12 +41,14 @@ class ListaTask extends AsyncTask<Void, Void, String> {
     private Context context;
     private View view;
     private String layout;
+    private  ExtratoAdapter adapter;
 
-    ListaTask(Context context, String endpoint, View view, String layout) {
+    ListaTask(Context context, String endpoint, View view, String layout, ExtratoAdapter adapter) {
         this.context = context;
         this.endpoint = endpoint;
         this.view = view;
         this.layout = layout;
+        this.adapter = adapter;
     }
 
     @Override
@@ -109,9 +112,11 @@ class ListaTask extends AsyncTask<Void, Void, String> {
                         }
 
                         //Exibir a lista de itens na tela
-                        ListAdapter adapterExtrato = new ArrayAdapter(context,android.R.layout.simple_list_item_1,listaExtrato);
-                        ListView listViewExtrato = (ListView) view.findViewById(R.id.extratoList);
-                        listViewExtrato.setAdapter(adapterExtrato);
+//                        ListAdapter adapterExtrato = new ArrayAdapter(context,android.R.layout.simple_list_item_1,listaExtrato);
+//                        ListView listViewExtrato = (ListView) view.findViewById(R.id.extratoList);
+//                        listViewExtrato.setAdapter(adapterExtrato);
+
+                        adapter.addList(listaExtrato);
                         break;
                     case "usuarioLayout":
 

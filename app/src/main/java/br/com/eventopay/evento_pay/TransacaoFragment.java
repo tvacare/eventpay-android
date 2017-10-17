@@ -30,7 +30,7 @@ public class TransacaoFragment extends Fragment {
 
     public void carregaSpinner(){
         String endpoint = "api/evento";
-        BaseEndpoint.listar(endpoint, getActivity(), myView, "spinnerLayout");
+        BaseEndpoint.listar(endpoint, getActivity(), myView, "spinnerLayout", null);
 
         Spinner mySpinner = (Spinner) getActivity().findViewById(R.id.spinnerEventos);
 

@@ -31,7 +31,7 @@ public class EventoFragment extends Fragment {
 
     public void listar() {
         String endpoint = "api/evento";
-        BaseEndpoint.listar(endpoint, getActivity(), myView, "eventoLayout");
+        BaseEndpoint.listar(endpoint, getActivity(), myView, "eventoLayout", null);
     }
 
 
