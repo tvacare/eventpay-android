@@ -20,4 +20,16 @@
     <string name="confirmation">Tem certeza que deseja sair?</string>
     <string name="positive">Sim</string>
     <string name="negative">Não</string>
+    <string name="currency">R$</string>
+    <string name="sport">Futebol</string>
+    <string name="moneyValue">200</string>
+    <string name="newEvent">Novo Evento</string>
+    <string name="saldo">saldo</string>
+    <string name="extract">Extrato</string>
+    <string name="invalidUser">Usuário Inválido</string>
+    <string name="invalidDay">Este não é um dia válido!</string>
+    <string name="err">Erro</string>
+    <string name="events">Eventos</string>
+    <string name="wait">Aguarde</string>
+    <string name="loadingData">Carregando dados.</string>
 </resources>

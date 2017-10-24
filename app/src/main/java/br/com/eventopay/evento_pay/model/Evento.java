@@ -1,86 +1,43 @@
 package br.com.eventopay.evento_pay.model;
 
-/**
- * Created by Bruno on 10/10/2017.
- */
-
 public class Evento {
-    private int Id;
-    private int Id_adm;
-    private double ValorTotal;
-    private double ValorSugerido;
-    private String Descricao;
-    private String nome;
-    private String Local;
 
-    public Evento(int id, int id_adm, double valorTotal, double valorSugerido, String descricao, String nome, String local) {
-        Id = id;
-        Id_adm = id_adm;
-        ValorTotal = valorTotal;
-        ValorSugerido = valorSugerido;
-        Descricao = descricao;
+    private int id;
+    private double valorTotal;
+    private double valorSugerido;
+    private String descricao;
+    private String nome;
+
+    public Evento(int id, double valorTotal, double valorSugerido, String descricao, String nome) {
+        this.id = id;
+        this.valorTotal = valorTotal;
+        this.valorSugerido = valorSugerido;
+        this.descricao = descricao;
         this.nome = nome;
-        Local = local;
     }
 
     public int getId() {
-        return Id;
+        return this.id;
     }
 
     public void setId(int id) {
-        Id = id;
-    }
-
-    public int getId_adm() {
-        return Id_adm;
-    }
-
-    public void setId_adm(int id_adm) {
-        Id_adm = id_adm;
-    }
-
-    public double getValorTotal() {
-        return ValorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        ValorTotal = valorTotal;
+        this.id = id;
     }
 
     public double getValorSugerido() {
-        return ValorSugerido;
-    }
-
-    public void setValorSugerido(double valorSugerido) {
-        ValorSugerido = valorSugerido;
+        return this.valorSugerido;
     }
 
     public String getDescricao() {
-        return Descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        Descricao = descricao;
+        return this.descricao;
     }
 
     public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getLocal() {
-        return Local;
-    }
-
-    public void setLocal(String local) {
-        Local = local;
+        return this.nome;
     }
 
     @Override
     public String toString() {
-        return nome ;
+        return nome;
     }
 }

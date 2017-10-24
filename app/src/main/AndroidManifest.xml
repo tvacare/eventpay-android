@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:screenOrientation="nosensor"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -22,17 +22,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="nosensor" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:label="@string/title_activity_home"
             android:screenOrientation="nosensor" />
         <activity
-            android:name=".CadastroUserActivity"
+            android:name=".activities.CadastroUserActivity"
             android:screenOrientation="nosensor" />
         <activity
-            android:name=".EventActivity"
+            android:name=".activities.EventActivity"
             android:screenOrientation="nosensor" />
     </application>
 

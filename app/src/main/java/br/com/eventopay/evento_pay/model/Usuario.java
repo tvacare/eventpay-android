@@ -11,16 +11,14 @@ import android.arch.persistence.room.PrimaryKey;
 public class Usuario {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
     private String nome;
+    private double saldo;
     private String senha;
     private String sexo;
     private String cpf;
     private String celular;
-    private double saldo;
 
-    public Usuario(String nome, double saldo) {
-        this.id = id;
+    public Usuario(String nome, String senha, String sexo, String cpf, String celular, Double saldo) {
         this.nome = nome;
         this.senha = senha;
         this.sexo = sexo;
@@ -29,39 +27,8 @@ public class Usuario {
         this.saldo = saldo;
     }
 
-    public Usuario(int id, String s, String senha, String sexo, String cpf, String nome, double saldo) {
-        this.nome = nome;
-        this.senha = this.senha;
-    }
-
-    public Usuario(String nome, String sexo, double saldo) {
-        this.nome = nome;
-        this.sexo = sexo;
-        this.saldo = saldo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
     @Override
     public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", senha='" + senha + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", celular='" + celular + '\'' +
-                ", saldo=" + saldo +
-                '}';
+        return " nome: " + nome + " saldo:" + saldo;
     }
 }

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.eventopay.evento_pay.SplashActivity">
+    tools:context="br.com.eventopay.evento_pay.activities.SplashActivity">
 
 </android.support.constraint.ConstraintLayout>

@@ -5,14 +5,10 @@
 package br.com.eventopay.evento_pay.rest;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -23,13 +19,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import br.com.eventopay.evento_pay.HomeActivity;
 import br.com.eventopay.evento_pay.R;
-import br.com.eventopay.evento_pay.model.Usuario;
+import br.com.eventopay.evento_pay.activities.HomeActivity;
 
 class LoginTask extends AsyncTask<String, Void, String> {
 
-    private ProgressDialog progressDialog;
     private Activity activity;
 
     LoginTask(Activity activity) {
@@ -37,17 +31,12 @@ class LoginTask extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected void onPreExecute() {
-      //  progressDialog = ProgressDialog.show(activity, null, null);
-    }
+    protected void onPreExecute() {}
 
     @Override
     protected void onPostExecute(String s) {
-        //progressDialog.dismiss();
-
 
         if (s != null && !s.equalsIgnoreCase("null")) {
-            //Recuperar os valores do JSON
             try {
                 JSONObject json = new JSONObject(s);
                 int id = json.getInt("Id");
@@ -66,8 +55,7 @@ class LoginTask extends AsyncTask<String, Void, String> {
                 editor.putBoolean("conectado", true);
                 editor.putFloat("saldo", d);
 
-                editor.commit();
-
+                editor.apply();
 
                 Intent intent = new Intent(activity, HomeActivity.class);
                 activity.startActivity(intent);
@@ -76,11 +64,8 @@ class LoginTask extends AsyncTask<String, Void, String> {
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(activity,
-                    "Usuário Inválido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.invalidUser, Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     protected String doInBackground(String... params) {

@@ -1,3 +1,7 @@
+/**
+ * Created by Thiago on 10/8/17.
+ */
+
 package br.com.eventopay.evento_pay.rest;
 
 import android.app.Activity;
@@ -6,7 +10,7 @@ import android.view.View;
 
 import org.json.JSONStringer;
 
-import br.com.eventopay.evento_pay.ExtratoAdapter;
+import br.com.eventopay.evento_pay.adapters.ExtratoAdapter;
 
 public class BaseEndpoint {
 
@@ -23,7 +27,7 @@ public class BaseEndpoint {
     }
 
     public static void listar(String endpoint, Context context, View view, String layout, ExtratoAdapter adapter) {
-        ListaTask listar = new ListaTask(context, URL+endpoint, view, layout, adapter);
+        ListarTask listar = new ListarTask(context, URL+endpoint, view, layout, adapter);
         listar.execute();
     }
 }
