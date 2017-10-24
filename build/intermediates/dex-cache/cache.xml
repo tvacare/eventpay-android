@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c9d7edc215aceac1674949e4e33bc9f64567126c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="281acc05f0c66938e60a99c0f51b542aa235b301">
+        sha1="7e742ec0bb9e8d5caf2a683ded3fd756ed929ed8">
         <dex dex="/Users/kiddo/AndroidStudioProjects/eventopay-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_cca43b3396d1155860ea0eef66f81e4adf875d66/classes.dex" />
     </item>
 
