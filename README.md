@@ -1,3 +1,3 @@
 # eventpay-android
 
-## Android app for a college project
+- Android app for a college project
